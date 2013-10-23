@@ -2,6 +2,8 @@ my_table <- t(read.table(commandArgs()[2], header = FALSE, sep = ",", dec = ".")
 a <- my_table[1:25]
 b <- my_table[2:25]
 
+dir.create("out", showWarnings = FALSE)
+
 n1 = length(a)
 png(filename="out/a.png")
 plot(sort(a), (1:n1)/n1, type="S", col="seagreen", main="F", xlab="S1", ylab="")
