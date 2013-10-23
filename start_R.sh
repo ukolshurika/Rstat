@@ -8,5 +8,6 @@ if [ ! -f $FILENAME ] || [ ! -f data/$VARIANT.data ]; then
     exit
 fi
 
-echo "$(cat $FILENAME)" "$(echo '\nSys.sleep(60)')" | R data/$VARIANT.data --vanilla -q --interactive > /dev/null
+#echo "$(cat $FILENAME)" "$(echo '\nSys.sleep(60)')" | R data/$VARIANT.data --vanilla -q --interactive > /dev/null
+R data/$VARIANT.data --vanilla -q --interactive < $FILENAME > /dev/null
 
