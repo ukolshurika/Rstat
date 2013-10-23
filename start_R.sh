@@ -3,7 +3,7 @@
 FILENAME=${1:?'Need to filename given'}
 VARIANT=${2:?'Need to variant number given'}
 
-if [ ! -f data/$VARIANT.data ]; then
+if [ ! -f $FILENAME ] || [ ! -f data/$VARIANT.data ]; then
     echo "File not found!"
     exit
 fi
