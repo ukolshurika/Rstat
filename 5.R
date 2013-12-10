@@ -6,15 +6,15 @@ sink(stderr())
 
 alpha = 0.1
 
-res = var.test(a, b)
+res = t.test(a, b)
 res
 p1 = res[["p.value"]]
 
-res = var.test(a, b, alternative="less")
+res = t.test(a, b, alternative = "less", var.equal = T)
 res
 p2 = res[["p.value"]]
 
-res = var.test(a, b, alternative="greater")
+res = t.test(a, b, alternative = "greater", var.equal = T)
 res
 p3 = res[["p.value"]]
 
@@ -22,6 +22,6 @@ pretty_write = function(n, chr, a, p, expr){
     write(paste(n, ": alpha [", a, "]", chr, "p-value [", p, "];", ifelse(expr, "принимаем", "отвергаем"), "гипотезу"), stdout())
 }
 
-pretty_write("а)", ">", alpha, p1, alpha > p1)
-pretty_write("б)", "<", alpha, p2, alpha < p2)
-pretty_write("в)", ">", alpha, p3, alpha > p3)
+pretty_write("H0", ">", alpha, p1, alpha > p1)
+pretty_write("H1", "<", alpha, p2, alpha < p2)
+pretty_write("H2", ">", alpha, p3, alpha > p3)
