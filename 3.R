@@ -20,5 +20,5 @@ write(paste("выборочная дисперсия b =",sv_b <- var(b)), stdou
 write(paste("среднее квадратичное отклонение a =",sd_a <- sd(a)), stdout())
 write(paste("среднее квадратичное отклонение b =",sd_b <- sd(b)), stdout())
 
-write(paste("выборочный коэффициент корреляции", cor(a,NULL)), stdout())
+write(paste("выборочный коэффициент корреляции ", cor(a,b)), stdout())
 
